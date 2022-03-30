@@ -13,7 +13,7 @@ public class CharacterEncodingFilter implements Filter {
 	private FilterConfig filterConfig;
 	private final String DEFAULTCHARSET = "UTF-8";
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
+	public void init(FilterConfig filterConfig){
 		this.filterConfig = filterConfig;
 	}
 
@@ -32,7 +32,7 @@ public class CharacterEncodingFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
+
 	}
 
 }

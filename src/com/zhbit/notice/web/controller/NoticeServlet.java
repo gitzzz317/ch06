@@ -20,7 +20,7 @@ public class NoticeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		request.setCharacterEncoding("UTF-8");
+
 		String method = request.getParameter("method");
 		if ("showNotice".equals(method))
 			doShowNotice(request, response);
