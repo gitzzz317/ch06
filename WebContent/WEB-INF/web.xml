@@ -43,6 +43,14 @@
 		<servlet-class>com.zhbit.notice.web.controller.UserServlet</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>registerServlet</servlet-name>
+		<servlet-class>com.zhbit.notice.web.controller.registerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>registerServlet</servlet-name>
+		<url-pattern>/registerServlet</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>typeServlet</servlet-name>
@@ -59,4 +67,20 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
+
+
+	<servlet>
+		<servlet-name>personalManagementServlet</servlet-name>
+		<servlet-class>com.zhbit.notice.web.controller.personalManagementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>personalManagementServlet</servlet-name>
+		<url-pattern>/personalManagementServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
 </web-app>

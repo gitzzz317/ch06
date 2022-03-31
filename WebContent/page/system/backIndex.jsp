@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>学校通知公告发布后面管理系统</title>
-<link href="css/ncss_style.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div id="ncss_banner_wrapper">
@@ -19,7 +19,8 @@
 			</div>
 			<div id="ncss_banner_content">
 				<div class="header_01">
-					后台管理系统 &nbsp;<a href="logout.jsp">退出</a>
+					后台管理系统 &nbsp;<a href="http://localhost:8080/ch06/logout.jsp">退出</a><br/>
+					<a href="http://localhost:8080/ch06/personalManagement.jsp">个人信息管理</a>
 				</div>
 			</div>
 		</div>
@@ -30,23 +31,23 @@
 	<div id="ncss_content_wrapper">
 		<div id="ncss_content">
 			<div id="column_w300">
-				<div class="header_03">通知公告类别</div>
+				<div class="header_03">通知公告类别 <a href="http://localhost:8080/ch06/typeManagement.jsp">管理</a></div>
 				<div class="column_w300_section_01">
 					<div class="notice_image_wrapper">
-						<img src="images/ncss_image_02.jpg" alt="image" />
+						<img src="http://localhost:8080/ch06/images/ncss_image_02.jpg" alt="image" />
 					</div>
 					<div class="notice_content">
-						<a href="noticeServlet?method=showAddNotice" target="showNotice">添加通知公告</a>
+						<a href="http://localhost:8080/ch06/noticeServlet?method=showAddNotice" target="showNotice">添加通知公告</a>
 					</div>
 					<div class="cleaner"></div>
 				</div>
 				<div class="cleaner"></div>
 				<div class="column_w300_section_01 even_color">
 					<div class="notice_image_wrapper">
-						<img src="images/ncss_image_04.jpg" alt="image" />
+						<img src="http://localhost:8080/ch06/images/ncss_image_04.jpg" alt="image" />
 					</div>
 					<div class="notice_content">
-						<a href="noticeServlet?method=showAllNotice" target="showNotice">通知公告列表</a>
+						<a href="http://localhost:8080/ch06/noticeServlet?method=showAllNotice" target="showNotice">通知公告列表</a>
 					</div>
 					<div class="cleaner"></div>
 				</div>
@@ -57,7 +58,7 @@
 				</div>
 				<div class="content_section_01">
 					<div>
-						<iframe name="showNotice" src="noticeServlet?method=showAddNotice"
+						<iframe name="showNotice" src="http://localhost:8080/ch06/noticeServlet?method=showAddNotice"
 							height="300px" width="400px" frameborder="0" marginheight="0"
 							marginwidth="0" scrolling="auto" />
 					</div>

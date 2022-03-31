@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>通知公告列表</title>
-<link href="css/ncss_style.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%
@@ -22,11 +22,11 @@
 	%>
 	<tr>
 	<td>
- 		<a href="noticeServlet?method=showNoticeDetail&noticeId=<%=notice.getNno()%>" target="showNotice"><%=notice.getNtitle()%></a>
+ 		<a href="http://localhost:8080/ch06/noticeServlet?method=showNoticeDetail&noticeId=<%=notice.getNno()%>" target="showNotice"><%=notice.getNtitle()%></a>
 	</td> 		
 	<td>
-		<a href="noticeServlet?method=showNoticeDetailForModify&noticeId=<%=notice.getNno()%>"  target="showNotice">修改</a>
-		<a href="noticeServlet?method=deleteNotice&noticeId=<%=notice.getNno()%>"  target="showNotice">删除</a>
+		<a href="http://localhost:8080/ch06/noticeServlet?method=showNoticeDetailForModify&noticeId=<%=notice.getNno()%>"  target="showNotice">修改</a>
+		<a href="http://localhost:8080/ch06/noticeServlet?method=deleteNotice&noticeId=<%=notice.getNno()%>"  target="showNotice">删除</a>
 	</td>
  	</tr>
  	<%

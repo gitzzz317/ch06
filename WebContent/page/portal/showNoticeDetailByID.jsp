@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>通知公告内容</title>
-<link href="css/ncss_style.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%

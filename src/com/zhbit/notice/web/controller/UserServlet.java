@@ -23,7 +23,7 @@ public class UserServlet extends HttpServlet {
 		User loginUser = userBiz.login(userName,password);
 		if (loginUser!=null){
 			request.getSession().setAttribute("LOGINED_USER", loginUser);
-	 		request.getRequestDispatcher("/page/system/backIndex.jsp").forward(request, response);
+	 		response.sendRedirect("http://localhost:8080/ch06/page/system/backIndex.jsp");
 	 	}else{
 	 		request.setAttribute("message", "????????????????????????");
 	 		request.getRequestDispatcher("login.jsp").forward(request, response);

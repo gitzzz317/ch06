@@ -22,7 +22,7 @@
 </head>
 <body>
     <div style="font-color:red"></div>
-	<form id="login" name="login" action="userServlet" onsubmit="javascript: return checkLogin();" method="post" >
+	<form id="login" name="login" action="http://localhost:8080/ch06/userServlet" onsubmit="javascript: return checkLogin();" method="post" >
         <% 
         	String errorMsg = (String)request.getAttribute("message");
         	if (errorMsg!=null){

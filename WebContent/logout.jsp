@@ -16,7 +16,7 @@
 		session.removeAttribute("LOGINED_USER");
 	}
 	session.invalidate();
-	response.sendRedirect("index.jsp");
+	response.sendRedirect("http://localhost:8080/ch06/index.jsp");
  %>
 </body>
 </html>

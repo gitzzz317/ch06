@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>通知公告列表</title>
-<link href="css/ncss_style.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <%
@@ -17,7 +17,7 @@
  <% } else { 
 	for (Notice notice: list){
  %>
- 	<a href="noticeServlet?method=showNoticeDetail&noticeId=<%=notice.getNno()%>"><%=notice.getNtitle()%></a><br />
+ 	<a href="http://localhost:8080/ch06/noticeServlet?method=showNoticeDetail&noticeId=<%=notice.getNno()%>"><%=notice.getNtitle()%></a><br />
  <%		
 	}
   }	 

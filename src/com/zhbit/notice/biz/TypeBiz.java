@@ -14,4 +14,9 @@ public class TypeBiz {
 		return mapper.getAllTypeList();
 	}
 
+	public void addType(String typeName){
+		SqlSession sqlSession = MybatisUtils.getSession();
+		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		mapper.addType(typeName);
+	}
 }

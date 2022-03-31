@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>修改通知公告</title>
-<link rel="stylesheet" href="css/ncss_style.css" type="text/css" />
+<link rel="stylesheet" href="http://localhost:8080/ch06/css/ncss_style.css" type="text/css" />
 <script type="text/javascript" language="javascript">
 	function checkNotice(){
 		var title = form1.title.value;
@@ -32,7 +32,7 @@
 <%
 	Notice notice = (Notice)request.getAttribute("notice");
  %>
-<form method="post" name="form1" action="noticeServlet" onsubmit="javascript: return checkNotice();">
+<form method="post" name="form1" action="http://localhost:8080/ch06/noticeServlet" onsubmit="javascript: return checkNotice();">
   <table>
     <tr>
       <td>标题:</td>

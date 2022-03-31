@@ -6,13 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>学校通知公告</title>
-<link href="css/ncss_style.css" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="ncss_banner_wrapper">
-  <div id="ncss_banner_image"> <img src="images/b.gif" alt="image" /> </div>
+  <div id="ncss_banner_image"> <img src="http://localhost:8080/ch06/images/b.gif" alt="image" /> </div>
   <div id="ncss_banner_content">
-    <div class="header_01">通知公告发布系统 &nbsp;&nbsp; <a href="login.jsp">登录后台</a> </div>
+    <div class="header_01">通知公告发布系统 &nbsp;&nbsp; <a href="http://localhost:8080/ch06/login.jsp">登录后台</a> <a href="http://localhost:8080/ch06/register.jsp">注册!</a> </div>
   </div>
 </div>
 <!-- end of banner -->
@@ -22,14 +22,14 @@
     <div id="column_w300">
       <div class="header_03">通知公告类别</div>
       <div class="column_w300_section_01">
-        <div class="notice_image_wrapper"> <img src="images/ncss_image_03.jpg" alt="image" /> </div>
+        <div class="notice_image_wrapper"> <img src="http://localhost:8080/ch06/images/ncss_image_03.jpg" alt="image" /> </div>
         <div class="notice_content">
         <%
         	List<Type> list = (List<Type>)request.getAttribute("list");
         	if (list!=null && list.size()!=0){
         		for (Type type: list){
 		%>
-    			   <a href="noticeServlet?method=showNotice&typeId=<%=type.getTno()%>" target="showNotice"><%=type.getTtypeName() %></a>;
+    			   <a href="http://localhost:8080/ch06/noticeServlet?method=showNotice&typeId=<%=type.getTno()%>" target="showNotice"><%=type.getTtypeName() %></a>;
        			   <br />		
 		<%	
         	}}else{
@@ -53,7 +53,7 @@
       <div class="header_02">欢迎访问通知公告发布系统&nbsp;现在是<%=formatDate(new Date()) %></div>
       <div class="content_section_01">
         <div>
-          <iframe name="showNotice" frameborder=0 width=400 height=300 marginheight=0 marginwidth=0 scrolling=no src="page/portal/nullList.html"  ></iframe>
+          <iframe name="showNotice" frameborder=0 width=400 height=300 marginheight=0 marginwidth=0 scrolling=no src="http://localhost:8080/ch06/page/portal/nullList.html"  ></iframe>
         </div>
       </div>
       <div class="cleaner"></div>
