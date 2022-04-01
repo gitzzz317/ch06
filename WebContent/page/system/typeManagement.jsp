@@ -17,7 +17,8 @@
     List<Type> allType = typeBiz.getAllType();
 %>
 <body>
-    <form>
+    <form action="http://localhost:8080/ch06/typeServlet" method="post">
+        <input type="hidden" name="method" value="addType" />
         <table>
             <tr>
                 <th>现有公告类别<%=allType.size()%>类</th>
@@ -27,16 +28,19 @@
             %>
             <tr>
                 <td><%=allType.get(i).getTtypeName()%></td>
-                <td><a href="/userServlet?Tno=<%=allType.get(i).getTno()%>">修改</a></td>
-                <td><a href="/userServlet?Tno=<%=allType.get(i).getTno()%>">删除</a></td>
+                <td><a href="http://localhost:8080/ch06/page/system/updateType.jsp?Tno=<%=allType.get(i).getTno()%>&TtypeName=<%=allType.get(i).getTtypeName()%>">修改</a></td>
+                <td><a href="http://localhost:8080/ch06/typeServlet?method=deleteType&Tno=<%=allType.get(i).getTno()%>">删除</a></td>
             </tr>
             <%
                 }
             %>
             <tr>
                 <td><input type="text" name="type">  <input type="submit" value="添加"></td>
+                <td><a href="http://localhost:8080/ch06/page/system/backIndex.jsp">返回</a></td>
             </tr>
         </table>
+
     </form>
+
 </body>
 </html>

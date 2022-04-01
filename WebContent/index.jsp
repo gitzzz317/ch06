@@ -7,6 +7,6 @@
 <title></title>
 </head>
 <body>
-	<jsp:forward page="/typeServlet" />
+	<jsp:forward page="/typeServlet?method=getAllType" />
 </body>
 </html>

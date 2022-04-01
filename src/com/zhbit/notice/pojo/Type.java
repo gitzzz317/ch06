@@ -8,6 +8,11 @@ public class Type {
 		
 	}
 
+	public Type(int tno, String ttypeName) {
+		Tno = tno;
+		TtypeName = ttypeName;
+	}
+
 	public int getTno() {
 		return Tno;
 	}

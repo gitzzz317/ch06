@@ -19,4 +19,16 @@ public class TypeBiz {
 		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
 		mapper.addType(typeName);
 	}
+
+	public void deleteType(int Tno){
+		SqlSession sqlSession = MybatisUtils.getSession();
+		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		mapper.deleteType(Tno);
+	}
+
+	public void updateType(Type type){
+		SqlSession sqlSession = MybatisUtils.getSession();
+		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		mapper.updataType(type);
+	}
 }

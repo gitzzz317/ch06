@@ -14,7 +14,7 @@
     <%
         User logined_user = (User) request.getSession().getAttribute("LOGINED_USER");
     %>
-    <form action="personalManagementServlet" method="post">
+    <form action="http://localhost:8080/ch06/personalManagementServlet" method="post">
         <input type="text" value="<%=logined_user.getUno()%>" hidden="hidden" name="Uno">
     <table>
         <tr>
@@ -29,7 +29,7 @@
             <td><input type="submit" value="修改"></td>
             <td><input type="reset" value="重置"></td>
         </tr>
-        <a href="page/system/backIndex.jsp">返回</a>
+        <a href="http://localhost:8080/ch06/page/system/backIndex.jsp">返回</a>
     </table>
     </form>
 </body>

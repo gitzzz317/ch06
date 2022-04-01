@@ -20,7 +20,7 @@
 			<div id="ncss_banner_content">
 				<div class="header_01">
 					后台管理系统 &nbsp;<a href="http://localhost:8080/ch06/logout.jsp">退出</a><br/>
-					<a href="http://localhost:8080/ch06/personalManagement.jsp">个人信息管理</a>
+					<a href="http://localhost:8080/ch06/page/system/personalManagement.jsp">个人信息管理</a>
 				</div>
 			</div>
 		</div>
@@ -31,7 +31,7 @@
 	<div id="ncss_content_wrapper">
 		<div id="ncss_content">
 			<div id="column_w300">
-				<div class="header_03">通知公告类别 <a href="http://localhost:8080/ch06/typeManagement.jsp">管理</a></div>
+				<div class="header_03">通知公告类别 <a href="http://localhost:8080/ch06/page/system/typeManagement.jsp" class="header_03">管理</a></div>
 				<div class="column_w300_section_01">
 					<div class="notice_image_wrapper">
 						<img src="http://localhost:8080/ch06/images/ncss_image_02.jpg" alt="image" />

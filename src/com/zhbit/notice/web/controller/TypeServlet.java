@@ -16,15 +16,52 @@ public class TypeServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String method = request.getParameter("method");
+		switch (method)
+		{
+			case "addType":
+				doAddType(request,response);break;
+			case "deleteType":
+				doDeleteType(request,response);break;
+			case "updateType":
+				doUpdateType(request,response);break;
+			case "getAllType":
+			default:
+				doGetAllType(request,response);break;
+		}
+
+	}
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+	private void doGetAllType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		TypeBiz typeBiz = new TypeBiz();
 		List<Type> typeList = typeBiz.getAllType();
 		request.setAttribute("list", typeList);
 		request.getRequestDispatcher("/page/portal/index.jsp").forward(request, response);
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		this.doGet(request, response);
+	private void doAddType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String type = request.getParameter("type");
+		TypeBiz typeBiz = new TypeBiz();
+		typeBiz.addType(type);
+		response.sendRedirect("http://localhost:8080/ch06/page/system/typeManagement.jsp");
 	}
-
+	private void doUpdateType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int tno = Integer.parseInt(request.getParameter("Tno"));
+		String ttypeName = request.getParameter("TtypeName");
+		Type type = new Type(tno, ttypeName);
+		TypeBiz typeBiz = new TypeBiz();
+		typeBiz.updateType(type);
+		response.sendRedirect("http://localhost:8080/ch06/page/system/typeManagement.jsp");
+	}
+	private void doDeleteType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int tno = Integer.parseInt(request.getParameter("Tno"));
+		TypeBiz typeBiz = new TypeBiz();
+		typeBiz.deleteType(tno);
+		response.sendRedirect("http://localhost:8080/ch06/page/system/typeManagement.jsp");
+	}
 }
