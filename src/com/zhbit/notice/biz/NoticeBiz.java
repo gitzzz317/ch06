@@ -51,4 +51,10 @@ public class NoticeBiz {
 		NoticeDao mapper = sqlSession.getMapper(NoticeDao.class);
 		return mapper.getNoticeByTitle(Ntitle);
 	}
+
+	public List<Notice> getNoticeByTime(String startTime, String endTime ){
+		SqlSession sqlSession = MybatisUtils.getSession();
+		NoticeDao mapper = sqlSession.getMapper(NoticeDao.class);
+		return mapper.getNoticeByTime(startTime,endTime);
+	}
 }

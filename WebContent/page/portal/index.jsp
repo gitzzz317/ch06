@@ -49,10 +49,18 @@
       		SimpleDateFormat formater = new SimpleDateFormat("yyyy年MM月dd日");
       		return formater.format(d);
       	}
+          String formatDate2(Date d){
+              SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
+              return formater.format(d);
+          }
        %>
         <form action="http://localhost:8080/ch06/noticeServlet" method="post" target="showNotice">
             <input type="hidden" name="method" value="showNoticeByTitle" />
             <input type="text" name="search" /><input type="submit" value="搜索"/>
+        </form>
+        <form action="http://localhost:8080/ch06/noticeServlet" method="post" target="showNotice">
+            <input type="hidden" name="method" value="showNoticeByTime" />
+            <input type="date" name="startTime" value="1900-01-01"/>~<input type="date" name="endTime" value="<%=formatDate2(new Date())%>"/><input type="submit" value="查询"/>
         </form>
       <div class="header_02">欢迎访问通知公告发布系统&nbsp;现在是<%=formatDate(new Date()) %></div>
       <div class="content_section_01">

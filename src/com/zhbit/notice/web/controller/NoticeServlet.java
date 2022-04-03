@@ -1,6 +1,9 @@
 package com.zhbit.notice.web.controller;
 
 import java.io.IOException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +44,13 @@ public class NoticeServlet extends HttpServlet {
 			doUpdateNotice(request, response);
 		else if ("showNoticeByTitle".equals(method))
 			doShowNoticeByTitle(request,response);
+		else if ("showNoticeByTime".equals(method)) {
+			try {
+				doShowNoticeByTime(request,response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -159,6 +169,27 @@ public class NoticeServlet extends HttpServlet {
 		String search = request.getParameter("search");
 		NoticeBiz noticeBiz = new NoticeBiz();
 		List<Notice> list = noticeBiz.getNoticeByTitle(search);
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
+	}
+
+	private void doShowNoticeByTime(HttpServletRequest request, HttpServletResponse response) throws ServletException, Exception{
+		String startTime = request.getParameter("startTime");
+		String endTime = request.getParameter("endTime");
+		//设置默认类型
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		//String类型转Date类型
+		Date sDate = sdf.parse(endTime);
+		//利用Calendar 实现 Date日期+1天
+		Calendar c = Calendar.getInstance();
+		c.setTime(sDate);
+		c.add(Calendar.DAY_OF_MONTH, 1);
+		sDate = c.getTime();
+		//将日期转成String类型 方便进入数据库比较
+		endTime = sdf.format(sDate);
+
+		NoticeBiz noticeBiz = new NoticeBiz();
+		List<Notice> list = noticeBiz.getNoticeByTime(startTime,endTime);
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
 	}

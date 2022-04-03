@@ -39,4 +39,7 @@ public interface NoticeDao{
 	@Select("select * from notice where Ntitle like '%${Ntitle}%'")
 	List<Notice> getNoticeByTitle(@Param("Ntitle") String Ntitle);
 
+	@Select("select * from Notice where NcreateTime >=#{startTime} and NcreateTime <=#{endTime} ")
+	List<Notice> getNoticeByTime(@Param("startTime") String startTime,@Param("endTime") String endTime);
+
 }
