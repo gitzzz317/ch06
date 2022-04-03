@@ -19,7 +19,8 @@
  	标题：<%= notice.getNtitle() %><br />
  	作者：<%= notice.getNeditor() %><br />
  	时间：<%= notice.getNcreateTime() %><br />
- 	内容：<%= notice.getNcontent() %>
+ 	内容：<%= notice.getNcontent() %><br/>
+    发布者：<%= notice.getUser().getUname()%>
  <%		
   }	 
  %>

@@ -9,6 +9,15 @@ public class Notice {
 	private String Neditor;
 	private Date NcreateTime;
 	private int Ntype;
+	private User user;
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public Notice() {
 	}

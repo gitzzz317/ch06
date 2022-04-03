@@ -6,7 +6,8 @@ import org.apache.ibatis.annotations.*;
 import java.util.List;
 
 public interface NoticeDao{
-	@Insert("insert into Notice (Ntitle, Ncontent,Neditor,NcreateTime,Ntype) values(#{Ntitle},#{Ncontent},#{Neditor},#{NcreateTime},#{Ntype})")
+
+	@Insert("insert into Notice (Ntitle, Ncontent,Neditor,NcreateTime,Ntype,Uno) values(#{Ntitle},#{Ncontent},#{Neditor},#{NcreateTime},#{Ntype},#{user.Uno})")
 	boolean addNotice(Notice notice);
 
 	@Delete("delete Notice where Nno= #{Nno}")
@@ -22,5 +23,17 @@ public interface NoticeDao{
 	List<Notice> getNoticeByType(@Param("Ntype") int Ntype);
 
 	@Select("select * from notice where Nno=#{Nno}")
+	@Results({
+			@Result(id=true,column = "Nno",property = "Nno"),
+			@Result(column = "Ntitle" , property = "ntitle"),
+			@Result(column = "Ncontent" , property = "Ncontent"),
+			@Result(column = "Neditor" , property = "Neditor"),
+			@Result(column = "NcreateTime" , property = "NcreateTime"),
+			@Result(column = "Ntype" , property = "Ntype"),
+			@Result(column = "Uno" , property = "user",
+			many = @Many(select = "com.zhbit.notice.mapper.UserDao.getUserById")
+			)
+	})
 	Notice getNoticeById(@Param("Nno") int Nno);
+	
 }

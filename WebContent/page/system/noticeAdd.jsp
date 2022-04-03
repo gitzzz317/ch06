@@ -31,6 +31,9 @@
 <body>
 <form method="post" name="form1" action="http://localhost:8080/ch06/noticeServlet" onsubmit="javascript: return checkNotice();">
   <table>
+    <%
+      User logined_user = (User) request.getSession().getAttribute("LOGINED_USER");
+    %>
     <tr>
       <td>标题:</td>
       <td><input type="text" name="title" size="35" value=""/></td>
@@ -57,6 +60,10 @@
       	}
        %>
         </select></td>
+    </tr>
+    <tr>
+      <td> 发布者：</td>
+      <td><input type="text" name="Uno" value="<%=logined_user.getUname()%>" disabled="disabled"/></td>
     </tr>
     <tr>
           <input type="hidden" name="method" value="addNotice" />	

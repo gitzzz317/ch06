@@ -1,10 +1,21 @@
 package com.zhbit.notice.pojo;
 
+import java.util.List;
+
 public class User {
 	private int Uno;
 	private String Uname;
 	private String Upassword;
-	
+	private List<Notice> notices;
+
+	public List<Notice> getNotices() {
+		return notices;
+	}
+
+	public void setNotices(List<Notice> notices) {
+		this.notices = notices;
+	}
+
 	public User() {
 	}
 

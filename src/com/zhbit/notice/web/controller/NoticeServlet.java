@@ -13,6 +13,7 @@ import com.zhbit.notice.pojo.Notice;
 import com.zhbit.notice.pojo.Type;
 import com.zhbit.notice.biz.NoticeBiz;
 import com.zhbit.notice.biz.TypeBiz;
+import com.zhbit.notice.pojo.User;
 
 public class NoticeServlet extends HttpServlet {
 
@@ -132,6 +133,7 @@ public class NoticeServlet extends HttpServlet {
 		notice.setNeditor(editor);
 		notice.setNtitle(title);
 		notice.setNtype(type);
+		notice.setUser((User) request.getSession().getAttribute("LOGINED_USER"));
 		notice.setNcreateTime(new java.sql.Date(new Date().getTime()));
 		NoticeBiz noticeBiz = new NoticeBiz();
 		if (noticeBiz.addNotice(notice)){
