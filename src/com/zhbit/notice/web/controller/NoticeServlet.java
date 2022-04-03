@@ -39,6 +39,8 @@ public class NoticeServlet extends HttpServlet {
 			doShowNoticeDetailForModify(request, response);
 		else if ("updateNotice".equals(method))
 			doUpdateNotice(request, response);
+		else if ("showNoticeByTitle".equals(method))
+			doShowNoticeByTitle(request,response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -151,5 +153,13 @@ public class NoticeServlet extends HttpServlet {
 		List<Notice> list = noticeBiz.getAllNotice();
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
-	}	
+	}
+
+	private void doShowNoticeByTitle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String search = request.getParameter("search");
+		NoticeBiz noticeBiz = new NoticeBiz();
+		List<Notice> list = noticeBiz.getNoticeByTitle(search);
+		request.setAttribute("list", list);
+		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
+	}
 }

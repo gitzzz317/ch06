@@ -45,4 +45,10 @@ public class NoticeBiz {
 		NoticeDao mapper = sqlSession.getMapper(NoticeDao.class);
 		return mapper.deleteNotice(noticeId);
 	}
+
+	public List<Notice> getNoticeByTitle(String Ntitle){
+		SqlSession sqlSession = MybatisUtils.getSession();
+		NoticeDao mapper = sqlSession.getMapper(NoticeDao.class);
+		return mapper.getNoticeByTitle(Ntitle);
+	}
 }

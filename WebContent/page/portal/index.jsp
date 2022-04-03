@@ -50,6 +50,10 @@
       		return formater.format(d);
       	}
        %>
+        <form action="http://localhost:8080/ch06/noticeServlet" method="post" target="showNotice">
+            <input type="hidden" name="method" value="showNoticeByTitle" />
+            <input type="text" name="search" /><input type="submit" value="搜索"/>
+        </form>
       <div class="header_02">欢迎访问通知公告发布系统&nbsp;现在是<%=formatDate(new Date()) %></div>
       <div class="content_section_01">
         <div>

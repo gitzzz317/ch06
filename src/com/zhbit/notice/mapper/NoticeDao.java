@@ -35,5 +35,8 @@ public interface NoticeDao{
 			)
 	})
 	Notice getNoticeById(@Param("Nno") int Nno);
-	
+
+	@Select("select * from notice where Ntitle like '%${Ntitle}%'")
+	List<Notice> getNoticeByTitle(@Param("Ntitle") String Ntitle);
+
 }
