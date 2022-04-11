@@ -6,7 +6,9 @@ import com.zhbit.notice.pojo.Type;
 import com.zhbit.notice.mapper.TypeDao;
 import com.zhbit.notice.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TypeBiz {
 	public List<Type> getAllType(){
 		SqlSession sqlSession = MybatisUtils.getSession();

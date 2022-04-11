@@ -1,7 +1,10 @@
 package com.zhbit.notice.pojo;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
+@Repository
 public class User {
 	private int Uno;
 	private String Uname;

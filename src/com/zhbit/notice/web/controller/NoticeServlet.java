@@ -1,7 +1,6 @@
 package com.zhbit.notice.web.controller;
 
 import java.io.IOException;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,10 +16,15 @@ import com.zhbit.notice.pojo.Type;
 import com.zhbit.notice.biz.NoticeBiz;
 import com.zhbit.notice.biz.TypeBiz;
 import com.zhbit.notice.pojo.User;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class NoticeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 2884006783308811985L;
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
+	Notice notice = context.getBean("notice" , Notice.class);
+	TypeBiz typeBiz =  context.getBean("typeBiz", TypeBiz.class);
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -61,7 +65,10 @@ public class NoticeServlet extends HttpServlet {
 	private void doShowNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		int typeId = Integer.parseInt(request.getParameter("typeId"));
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
+//		List<Notice> list = noticeBiz.getNoticeByTypeId(typeId);
+//		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//		NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);
 		List<Notice> list = noticeBiz.getNoticeByTypeId(typeId);
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/portal/showNoticeByType.jsp").forward(request, response);
@@ -70,7 +77,7 @@ public class NoticeServlet extends HttpServlet {
 	private void doShowNoticeDetail(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		Notice notice = noticeBiz.getNoticeById(noticeId);
 		request.setAttribute("notice", notice);
 		request.getRequestDispatcher("/page/portal/showNoticeDetailByID.jsp").forward(request, response);
@@ -80,11 +87,11 @@ public class NoticeServlet extends HttpServlet {
 	private void doShowNoticeDetailForModify(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException   {
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
-		TypeBiz typeBiz = new TypeBiz();
+//		TypeBiz typeBiz = new TypeBiz();
 		List<Type> typeList = typeBiz.getAllType();
 		request.setAttribute("list", typeList);
-		NoticeBiz noticeBiz = new NoticeBiz(); 
-		Notice notice = noticeBiz.getNoticeById(noticeId); 
+//		NoticeBiz noticeBiz = new NoticeBiz();
+		Notice notice = noticeBiz.getNoticeById(noticeId);
 		request.setAttribute("notice", notice);
 		request.getRequestDispatcher("page/system/noticeEdit.jsp").forward(request, response);
 	}
@@ -96,14 +103,14 @@ public class NoticeServlet extends HttpServlet {
 		String content=request.getParameter("content");
 		int type=Integer.parseInt(request.getParameter("type"));
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
-		Notice notice =new Notice();
+//		Notice notice =new Notice();
 		notice.setNno(noticeId);
 		notice.setNcontent(content);
 		notice.setNeditor(editor);
 		notice.setNtitle(title);
 		notice.setNtype(type);
 		notice.setNcreateTime(new java.sql.Date(new Date().getTime()));
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		if (noticeBiz.updateNotice(notice)){
 			List<Notice> list = noticeBiz.getAllNotice();
 			request.setAttribute("list", list);
@@ -116,7 +123,7 @@ public class NoticeServlet extends HttpServlet {
 	private void doDeleteNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
 		int noticeId = Integer.parseInt(request.getParameter("noticeId"));
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		if (noticeBiz.deleteNotice(noticeId)){
 			List<Notice> list = noticeBiz.getAllNotice();
 			request.setAttribute("list", list);
@@ -128,7 +135,7 @@ public class NoticeServlet extends HttpServlet {
 
 	private void doShowAddNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
-		TypeBiz typeBiz = new TypeBiz();
+//		TypeBiz typeBiz = new TypeBiz();
 		List<Type> typeList = typeBiz.getAllType();
 		request.setAttribute("list", typeList);
 		request.getRequestDispatcher("page/system/noticeAdd.jsp").forward(request, response);
@@ -140,14 +147,14 @@ public class NoticeServlet extends HttpServlet {
 		String editor=request.getParameter("editor");
 		String content=request.getParameter("content");
 		int type=Integer.parseInt(request.getParameter("type"));
-		Notice notice =new Notice();
+//		Notice notice =new Notice();
 		notice.setNcontent(content);
 		notice.setNeditor(editor);
 		notice.setNtitle(title);
 		notice.setNtype(type);
 		notice.setUser((User) request.getSession().getAttribute("LOGINED_USER"));
 		notice.setNcreateTime(new java.sql.Date(new Date().getTime()));
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		if (noticeBiz.addNotice(notice)){
 			List<Notice> list = noticeBiz.getAllNotice();
 			request.setAttribute("list", list);
@@ -159,7 +166,7 @@ public class NoticeServlet extends HttpServlet {
 
 	private void doShowAllNotice(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException  {
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		List<Notice> list = noticeBiz.getAllNotice();
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
@@ -167,7 +174,7 @@ public class NoticeServlet extends HttpServlet {
 
 	private void doShowNoticeByTitle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String search = request.getParameter("search");
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		List<Notice> list = noticeBiz.getNoticeByTitle(search);
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);
@@ -188,7 +195,7 @@ public class NoticeServlet extends HttpServlet {
 		//将日期转成String类型 方便进入数据库比较
 		endTime = sdf.format(sDate);
 
-		NoticeBiz noticeBiz = new NoticeBiz();
+//		NoticeBiz noticeBiz = new NoticeBiz();
 		List<Notice> list = noticeBiz.getNoticeByTime(startTime,endTime);
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/page/system/showAllNoticeList.jsp").forward(request, response);

@@ -7,20 +7,90 @@
           <element id="module-output" name="ch06" />
         </element>
         <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/asm-5.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/sqljdbc4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/ant-1.9.6.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/cglib-3.2.5.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/javassist-3.22.0-GA.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/ognl-3.1.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/c3p0-0.9.5.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/log4j-1.2.17.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/log4j-api-2.3.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-3.4.6.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/log4j-core-2.3.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/ant-launcher-1.9.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/aopalliance-1.0.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/slf4j-api-1.7.25.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/ant-launcher-1.9.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/aspectjweaver-1.7.4.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-logging-1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/ant-1.9.6.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/asm-5.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/log4j-1.2.17.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/javassist-3.22.0-GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-spring-2.0.6.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/slf4j-log4j12-1.7.25.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/sqljdbc4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-tx-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aop-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jcl-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jms-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-orm-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-oxm-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-web-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-core-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jdbc-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-test-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-beans-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/mchange-commons-java-0.2.20.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webmvc-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-spring-2.0.6-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-spring-2.0.6-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aspects-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webflux-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-messaging-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-websocket-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-expression-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-instrument-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-tx-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-tx-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aop-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aop-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jcl-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jcl-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jms-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jms-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-orm-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-orm-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-oxm-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-oxm-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-web-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-web-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-core-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-core-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jdbc-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-jdbc-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-test-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-test-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-beans-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-beans-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webmvc-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webmvc-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aspects-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-aspects-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-indexer-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-support-5.0.8.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webflux-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-webflux-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-messaging-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-messaging-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-websocket-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-websocket-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-expression-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-expression-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-instrument-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-instrument-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-indexer-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-indexer-5.0.8.RELEASE-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-support-5.0.8.RELEASE-javadoc.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/WebContent/WEB-INF/lib/spring-context-support-5.0.8.RELEASE-sources.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ch06/web/Web" />

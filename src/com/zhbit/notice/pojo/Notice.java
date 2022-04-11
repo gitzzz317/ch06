@@ -1,7 +1,11 @@
 package com.zhbit.notice.pojo;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import java.util.*;
 
+@Repository
 public class Notice {
 	private int Nno;
 	private String Ntitle;

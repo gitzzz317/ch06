@@ -1,5 +1,8 @@
 package com.zhbit.notice.pojo;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class Type {
 	private int Tno;
 	private String TtypeName;

@@ -9,17 +9,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.zhbit.notice.pojo.User;
 import com.zhbit.notice.biz.UserBiz;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 6971717725995508517L;
+	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	UserBiz userBiz = context.getBean("userBiz",UserBiz.class);
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 //		request.setCharacterEncoding("UTF-8");
 		String userName = request.getParameter("userName");
 		String password = request.getParameter("password");
-		UserBiz userBiz = new UserBiz();
+//		UserBiz userBiz = new UserBiz();
 		User loginUser = userBiz.login(userName,password);
 		if (loginUser!=null){
 			request.getSession().setAttribute("LOGINED_USER", loginUser);
