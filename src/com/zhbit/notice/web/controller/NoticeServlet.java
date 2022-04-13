@@ -20,6 +20,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class NoticeServlet extends HttpServlet {
 
+
+
 	private static final long serialVersionUID = 2884006783308811985L;
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	NoticeBiz noticeBiz = context.getBean("noticeBiz", NoticeBiz.class);

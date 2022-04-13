@@ -4,7 +4,7 @@
  	   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<!-- 引入db.properties配置文件 -->
-	<properties resource="db.properties" />
+<!--	<properties resource="db.properties" />-->
 	
 	<!-- 开启二级缓存的全局配置，默认值为true 
 	<settings>
@@ -16,24 +16,24 @@
 		<package name="com.zhbit.notice.pojo"/>
 	</typeAliases>
 	<!--配置环境 -->
-	<environments default="sqlserver">
-		<environment id="sqlserver">
-			<transactionManager type="JDBC" />
-			<dataSource type="POOLED">
-				<property name="driver" value="${jdbc.driver}" />
-				<property name="url" value="${jdbc.url}" />
-				<property name="username" value="${jdbc.username}" />
-				<property name="password" value="${jdbc.password}" />
-			</dataSource>
-		</environment>
-	</environments>
+<!--	<environments default="sqlserver">-->
+<!--		<environment id="sqlserver">-->
+<!--			<transactionManager type="JDBC" />-->
+<!--			<dataSource type="POOLED">-->
+<!--				<property name="driver" value="${jdbc.driver}" />-->
+<!--				<property name="url" value="${jdbc.url}" />-->
+<!--				<property name="username" value="${jdbc.username}" />-->
+<!--				<property name="password" value="${jdbc.password}" />-->
+<!--			</dataSource>-->
+<!--		</environment>-->
+<!--	</environments>-->
 	<!-- 配置映射文件的位置 -->
-	<mappers>
+<!--	<mappers>-->
 
-		<package name="com.zhbit.notice.mapper"/>
-		<!--
-		<mapper resource="com/zhbit/notice/mapper/UserDao"/>
-		<mapper resource="com/zhbit/notice/mapper/StudentMapper.xml" />-->
-	</mappers>
+<!--		<package name="com.zhbit.notice.mapper"/>-->
+<!--		&lt;!&ndash;-->
+<!--		<mapper resource="com/zhbit/notice/mapper/UserDao"/>-->
+<!--		<mapper resource="com/zhbit/notice/mapper/StudentMapper.xml" />&ndash;&gt;-->
+<!--	</mappers>-->
 </configuration>
 

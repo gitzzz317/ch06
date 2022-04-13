@@ -6,31 +6,37 @@ import com.zhbit.notice.pojo.Type;
 import com.zhbit.notice.mapper.TypeDao;
 import com.zhbit.notice.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
+@Transactional
 public class TypeBiz {
+	@Autowired
+	private TypeDao typeDao;
 	public List<Type> getAllType(){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
-		return mapper.getAllTypeList();
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		return typeDao.getAllTypeList();
 	}
 
 	public void addType(String typeName){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
-		mapper.addType(typeName);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		typeDao.addType(typeName);
 	}
 
 	public void deleteType(int Tno){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
-		mapper.deleteType(Tno);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		typeDao.deleteType(Tno);
 	}
 
 	public void updateType(Type type){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
-		mapper.updataType(type);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		TypeDao mapper = sqlSession.getMapper(TypeDao.class);
+		typeDao.updataType(type);
 	}
 }

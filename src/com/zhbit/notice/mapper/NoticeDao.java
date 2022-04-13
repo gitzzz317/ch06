@@ -2,9 +2,11 @@ package com.zhbit.notice.mapper;
 
 import com.zhbit.notice.pojo.Notice;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface NoticeDao{
 
 	@Insert("insert into Notice (Ntitle, Ncontent,Neditor,NcreateTime,Ntype,Uno) values(#{Ntitle},#{Ncontent},#{Neditor},#{NcreateTime},#{Ntype},#{user.Uno})")

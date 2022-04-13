@@ -3,8 +3,9 @@ package com.zhbit.notice.mapper;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 import com.zhbit.notice.pojo.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface UserDao{
 
 	@Select("Select * from Nuser where Uname = #{Uname} and Upassword = #{Upassword}")

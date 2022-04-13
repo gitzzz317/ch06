@@ -4,32 +4,38 @@ import com.zhbit.notice.mapper.UserDao;
 import com.zhbit.notice.pojo.User;
 import com.zhbit.notice.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
+@Transactional
 public class UserBiz {
+	@Autowired
+	private UserDao userDao;
+
 	public User login(String userName, String password){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		UserDao mapper = sqlSession.getMapper(UserDao.class);
-		User user = mapper.getUserByPassword(userName, password);
+		//SqlSession sqlSession = MybatisUtils.getSession();
+		//UserDao mapper = sqlSession.getMapper(UserDao.class);
+		User user = userDao.getUserByPassword(userName, password);
 		return user;
 	}
 
 	public void register(String userName, String password){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		UserDao mapper = sqlSession.getMapper(UserDao.class);
-		mapper.addUser(userName, password);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		UserDao mapper = sqlSession.getMapper(UserDao.class);
+		userDao.addUser(userName, password);
 	}
 
 	public void updateUser(int Uno ,String userName, String password){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		UserDao mapper = sqlSession.getMapper(UserDao.class);
-		mapper.updateUser(Uno ,userName,password);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		UserDao mapper = sqlSession.getMapper(UserDao.class);
+		userDao.updateUser(Uno ,userName,password);
 	}
 
 	public User getUserById(int Uno){
-		SqlSession sqlSession = MybatisUtils.getSession();
-		UserDao mapper = sqlSession.getMapper(UserDao.class);
-		return mapper.getUserById(Uno);
+//		SqlSession sqlSession = MybatisUtils.getSession();
+//		UserDao mapper = sqlSession.getMapper(UserDao.class);
+		return userDao.getUserById(Uno);
 	}
 }
