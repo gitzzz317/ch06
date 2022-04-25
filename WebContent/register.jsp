@@ -27,13 +27,10 @@
 <body>
 
 <div style="font-color:red"></div>
-<form id="register" name="register" action="http://localhost:8080/ch06/registerServlet" onsubmit="javascript: return checkRegister();" method="post" >
-    <%
-        String errorMsg = (String)request.getAttribute("message");
-        if (errorMsg!=null){
-            out.print("<div style='color:red'>" +errorMsg + "</div>");
-        }
-    %>
+<form id="register" name="register" action="${pageContext.servletContext.contextPath}/addUser" onsubmit="javascript: return checkRegister();" method="post" >
+    <div style="color: red">
+        ${requestScope.message}<br/>
+    </div>
     <table>
         <tr>
             <td>用户名：</td>

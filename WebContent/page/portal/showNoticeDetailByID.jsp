@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.zhbit.notice.pojo.*,java.util.*" %>
@@ -9,20 +10,10 @@
 <link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<%
-	Notice notice = (Notice)request.getAttribute("notice");  
-	if (notice==null){
- %>
- <div>对应通知公告没有找到或已删除！</div>
- <% } else { 
- %>
- 	标题：<%= notice.getNtitle() %><br />
- 	作者：<%= notice.getNeditor() %><br />
- 	时间：<%= notice.getNcreateTime() %><br />
- 	内容：<%= notice.getNcontent() %><br/>
-    发布者：<%= notice.getUser().getUname()%>
- <%		
-  }	 
- %>
+ 	标题：${notice.ntitle}<br />
+ 	作者：${notice.neditor}<br />
+ 	时间：${notice.ncreateTime}<br />
+ 	内容：${notice.ncontent}<br/>
+    发布者：${notice.user.uname}
 </body>
 </html>

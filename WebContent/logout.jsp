@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.zhbit.notice.pojo.*" %>
@@ -8,6 +10,11 @@
 <title></title>
 </head>
 <body>
+<c:if test="${not empty requestScope.LOGINED_USER}">
+	<c:set scope="session" var="LOGINED_USER" value=""></c:set>
+	<c:remove var="LOGINED_USER" scope="session"></c:remove>
+</c:if>
+
 <%
 	
 	User loginUser = (User)session.getAttribute("LOGINED_USER");
@@ -18,5 +25,6 @@
 	session.invalidate();
 	response.sendRedirect("http://localhost:8080/ch06/index.jsp");
  %>
+
 </body>
 </html>

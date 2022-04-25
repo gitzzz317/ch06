@@ -26,6 +26,16 @@ public class Notice {
 	public Notice() {
 	}
 
+	public Notice(int nno, String ntitle, String ncontent, String neditor, Date ncreateTime, int ntype, User user) {
+		Nno = nno;
+		Ntitle = ntitle;
+		Ncontent = ncontent;
+		Neditor = neditor;
+		NcreateTime = ncreateTime;
+		Ntype = ntype;
+		this.user = user;
+	}
+
 	public int getNno() {
 		return Nno;
 	}

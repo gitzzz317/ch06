@@ -15,7 +15,7 @@
     String TtypeName = request.getParameter("TtypeName");
 %>
 <body>
-    <form action="http://localhost:8080/ch06/typeServlet" method="post">
+    <form action="${pageContext.servletContext.contextPath}/updateType" method="post">
         <input type="hidden" name="Tno" value="<%=tno%>" />
         <input type="hidden" name="method" value="updateType" />
         <table>
@@ -26,7 +26,7 @@
             <tr>
                 <td><input type="submit" value="修改"></td>
                 <td><input type="reset" value="重置"></td>
-                <td><a href="http://localhost:8080/ch06/page/system/typeManagement.jsp">返回</a></td>
+                <td><a href="${pageContext.servletContext.contextPath}/getAllTypeManagement">返回</a></td>
             </tr>
         </table>
     </form>

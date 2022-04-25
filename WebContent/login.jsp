@@ -22,13 +22,12 @@
 </head>
 <body>
     <div style="font-color:red"></div>
-	<form id="login" name="login" action="http://localhost:8080/ch06/userServlet" onsubmit="javascript: return checkLogin();" method="post" >
-        <% 
-        	String errorMsg = (String)request.getAttribute("message");
-        	if (errorMsg!=null){
-        		out.print("<div style='color:red'>" +errorMsg + "</div>");
-    		}    	 
-        %>
+
+	<form id="login" name="login" action="${pageContext.request.contextPath}/login" onsubmit="javascript: return checkLogin();" method="post" >
+		<div style="color: red">
+			${requestScope.message}<br/>
+		</div>
+
     	用户名：<input type="text" id="userName" name="userName"/>
     	<br />
      	 密&nbsp;&nbsp;码：<input type="password" id="password" name="password"/>

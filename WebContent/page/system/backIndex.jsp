@@ -31,13 +31,15 @@
 	<div id="ncss_content_wrapper">
 		<div id="ncss_content">
 			<div id="column_w300">
-				<div class="header_03">通知公告类别 <a href="http://localhost:8080/ch06/page/system/typeManagement.jsp" class="header_03">管理</a></div>
+				<div class="header_03">
+					通知公告类别 <a href="${pageContext.servletContext.contextPath}/getAllTypeManagement" class="header_03">管理</a></div>
 				<div class="column_w300_section_01">
 					<div class="notice_image_wrapper">
 						<img src="http://localhost:8080/ch06/images/ncss_image_02.jpg" alt="image" />
 					</div>
 					<div class="notice_content">
-						<a href="http://localhost:8080/ch06/noticeServlet?method=showAddNotice" target="showNotice">添加通知公告</a>
+<%--						添加通知公告--%>
+						<a href="${pageContext.servletContext.contextPath}/getAddNotice" target="showNotice">添加通知公告</a>
 					</div>
 					<div class="cleaner"></div>
 				</div>
@@ -47,18 +49,20 @@
 						<img src="http://localhost:8080/ch06/images/ncss_image_04.jpg" alt="image" />
 					</div>
 					<div class="notice_content">
-						<a href="http://localhost:8080/ch06/noticeServlet?method=showAllNotice" target="showNotice">通知公告列表</a>
+<%--						查询 所有通知公告列表--%>
+						<a href="${pageContext.servletContext.contextPath}/getAllNotice" target="showNotice">通知公告列表</a>
 					</div>
 					<div class="cleaner"></div>
 				</div>
 			</div>
 			<div id="column_w530">
 				<div class="header_02">
-					欢迎<%=((User)session.getAttribute("LOGINED_USER")).getUname()%>访问通知公告发布后台管理系统
+					欢迎${sessionScope.LOGINED_USER.uname}访问通知公告发布后台管理系统
 				</div>
 				<div class="content_section_01">
 					<div>
-						<iframe name="showNotice" src="http://localhost:8080/ch06/noticeServlet?method=showAddNotice"
+<%--					默认	查询 所有通知公告列表--%>
+						<iframe name="showNotice" src="${pageContext.servletContext.contextPath}/getAllNotice"
 							height="300px" width="400px" frameborder="0" marginheight="0"
 							marginwidth="0" scrolling="auto" />
 					</div>

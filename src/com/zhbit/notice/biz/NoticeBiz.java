@@ -3,8 +3,6 @@ package com.zhbit.notice.biz;
 
 import com.zhbit.notice.mapper.NoticeDao;
 import com.zhbit.notice.pojo.Notice;
-import com.zhbit.notice.utils.MybatisUtils;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

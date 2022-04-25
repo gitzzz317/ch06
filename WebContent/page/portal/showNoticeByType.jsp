@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.zhbit.notice.pojo.*,java.util.*" %>
@@ -9,18 +10,13 @@
 <link href="http://localhost:8080/ch06/css/ncss_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<%
-	List<Notice> list = (List<Notice>)request.getAttribute("list");
-	if (list==null || list.size()==0){
- %>
- <div>没有记录</div>
- <% } else { 
-	for (Notice notice: list){
- %>
- 	<a href="http://localhost:8080/ch06/noticeServlet?method=showNoticeDetail&noticeId=<%=notice.getNno()%>"><%=notice.getNtitle()%></a><br />
- <%		
-	}
-  }	 
- %>
+<c:if test="${empty requestScope.lists}">
+    没有记录
+</c:if>
+<c:forEach items="${requestScope.lists}" var="list">
+    <a href="${pageContext.servletContext.contextPath}/getNoticeById?nno=${list.nno}">
+        ${list.ntitle}
+    </a><br />
+</c:forEach>
 </body>
 </html>

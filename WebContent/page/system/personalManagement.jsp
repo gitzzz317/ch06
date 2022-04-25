@@ -11,19 +11,16 @@
     <title>个人信息管理</title>
 </head>
 <body>
-    <%
-        User logined_user = (User) request.getSession().getAttribute("LOGINED_USER");
-    %>
-    <form action="http://localhost:8080/ch06/personalManagementServlet" method="post">
-        <input type="text" value="<%=logined_user.getUno()%>" hidden="hidden" name="Uno">
+    <form action="${pageContext.servletContext.contextPath}/updateUser" method="post">
+        <input type="text" value="${sessionScope.LOGINED_USER.uno}" hidden="hidden" name="uno">
     <table>
         <tr>
             <td>用户名：</td>
-            <td><input type="text" value="<%=logined_user.getUname()%>" name="userName"></td>
+            <td><input type="text" value="${sessionScope.LOGINED_USER.uname}" name="uname"></td>
         </tr>
         <tr>
             <td>密码：</td>
-            <td><input type="text" value="<%=logined_user.getUpassword()%>" name="password"></td>
+            <td><input type="text" value="${sessionScope.LOGINED_USER.upassword}" name="upassword"></td>
         </tr>
         <tr>
             <td><input type="submit" value="修改"></td>
