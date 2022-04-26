@@ -61,8 +61,7 @@
     </bean>
 
     <!-- 配置视图解析器，可以显式设置，也可以不设置，不设置会依据SpringMVC的默认设置 -->
-    <bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/" />
         <property name="suffix" value=".jsp" />
     </bean>
@@ -72,21 +71,23 @@
   若只设置该标签，则只能访问静态资源，其他请求则无法访问
   此时必须设置<mvc:annotation-driven/>解决问题
  -->
-
     <mvc:default-servlet-handler/>
     <!-- 开启mvc注解驱动 -->
-    <mvc:annotation-driven >
-<!--        <mvc:message-converters>-->
-<!--            &lt;!&ndash; 处理响应中文内容乱码 &ndash;&gt;-->
-<!--            <bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-<!--                <property name="defaultCharset" value="UTF-8" />-->
-<!--                <property name="supportedMediaTypes">-->
-<!--                    <list>-->
-<!--                        <value>text/html</value>-->
-<!--                        <value>application/json</value>-->
-<!--                    </list>-->
-<!--                </property>-->
-<!--            </bean>-->
-<!--        </mvc:message-converters>-->
-    </mvc:annotation-driven>
+    <mvc:annotation-driven />
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/getAllType"/>
+            <mvc:exclude-mapping path="/addUser"/>
+            <mvc:exclude-mapping path="/getNoticeByTypeId"/>
+            <mvc:exclude-mapping path="/getNoticeById"/>
+            <mvc:exclude-mapping path="/getNoticeByTitle"/>
+            <mvc:exclude-mapping path="/getNoticeByTime"/>
+            <mvc:exclude-mapping path="/getAllType"/>
+            <mvc:exclude-mapping path="/login"/>
+            <ref bean="loginInterceptor"></ref>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
