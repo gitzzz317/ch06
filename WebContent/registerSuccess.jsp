@@ -11,7 +11,7 @@
     <title>注册成功</title>
 </head>
 <body>
-    欢迎您<%=((User)(request.getAttribute("registerUser"))).getUname()%>,注册成功！
+    欢迎您${requestScope.registerUser.uname},注册成功！
     <a href="login.jsp">请前往登录！</a>
 </body>
 </html>

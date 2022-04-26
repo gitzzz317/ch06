@@ -16,13 +16,6 @@
 </c:if>
 
 <%
-	
-	User loginUser = (User)session.getAttribute("LOGINED_USER");
-	if (loginUser!=null){
-		session.setAttribute("LOGINED_USER",null);
-		session.removeAttribute("LOGINED_USER");
-	}
-	session.invalidate();
 	response.sendRedirect("http://localhost:8080/ch06/index.jsp");
  %>
 
