@@ -42,7 +42,7 @@
       <div class="cleaner"></div>
     </div>
     <!-- end of column_w300 -->
-    
+
     <div id="column_w530">
       <%!
         String formatDate(Date d){
